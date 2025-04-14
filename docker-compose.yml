@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  frontend-node:
+    image: node:20-alpine3.19
+    volumes:
+      - .:/var/www
+    working_dir: /var/www
+    command: sh -c "yarn install && yarn dev"
+    ports:
+      - '9000:9000'
+  frontend-static:
+    image: node:20-alpine3.19
+    volumes:
+      - .:/var/www
+    working_dir: /var/www
+    command: sh -c "yarn install && yarn build && npx http-server dist/spa -p 80"
+    ports:
+      - '80:80'
