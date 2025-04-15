@@ -8,9 +8,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     env:
       API_KEY: ${{ secrets.API_KEY }}
-      PUBLIC_PATH: ${{ vars.PUBLIC_PATH }}
+      PUBLIC_PATH: ${{ vars.PUBLIC_PATH }} # Example: "/ts-news-app/"
 
     steps:
       - name: Checkout repo
@@ -19,16 +20,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: yarn install
 
-      - name: Build app
+      - name: Build app with env vars
         run: |
           echo "API_KEY=$API_KEY" > .env
-          echo "PUBLIC_PATH=$PUBLIC_PATH" > .env
           yarn build
+        env:
+          PUBLIC_PATH: ${{ env.PUBLIC_PATH }}
+          API_KEY: ${{ env.API_KEY }}
+
+      - name: Add 404 fallback for Vue Router
+        run: cp dist/spa/index.html dist/spa/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
