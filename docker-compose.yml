@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   frontend-node:
-    image: node:20-alpine3.19
+    image: node:23-alpine3.20
     volumes:
       - .:/var/www
     working_dir: /var/www
