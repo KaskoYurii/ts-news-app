@@ -1,1 +1,0 @@
-import{_ as t,Q as s}from"./_plugin-vue_export-helper-Bbydew-X.js";import{I as r,K as a,J as o,N as c}from"./index-C80xeeK1.js";import"./render-BImM5XKh.js";const n={};function i(f,e){return o(),r(s,{class:"row items-center justify-evenly"},{default:a(()=>e[0]||(e[0]=[c(" This is a welcome page. ")])),_:1})}const p=t(n,[["render",i]]);export{p as default};
