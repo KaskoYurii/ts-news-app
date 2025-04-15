@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       API_KEY: ${{ secrets.API_KEY }}
+      PUBLIC_PATH: ${{ vars.PUBLIC_PATH }}
 
     steps:
       - name: Checkout repo
@@ -26,6 +27,7 @@ jobs:
       - name: Build app
         run: |
           echo "API_KEY=$API_KEY" > .env
+          echo "PUBLIC_PATH=$PUBLIC_PATH" > .env
           yarn build
 
       - name: Deploy to GitHub Pages
