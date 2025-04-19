@@ -20,7 +20,6 @@ onMounted(async () => {
 </script>
 <template>
   <q-page class="row items-center justify-evenly">
-    <div class="text-h2 q-ma-lg">The list of the recent news</div>
     <NewsItemWrapper :posts="postList" />
   </q-page>
 </template>
