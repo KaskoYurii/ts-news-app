@@ -9,7 +9,6 @@ const loadNewsList = async (): Promise<void> => {
   try {
     const { data } = await getNewsList();
     postList.value = data.Data;
-    console.log('News list loaded successfully:', postList.value);
   } catch (error) {
     console.error('Error loading news list:', error);
   }
