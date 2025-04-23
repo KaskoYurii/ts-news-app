@@ -6,7 +6,7 @@ services:
     volumes:
       - .:/var/www
     working_dir: /var/www
-    command: sh -c "yarn install && yarn dev"
+    command: sh -c "yarn install && yarn dev || tail -f /dev/null"
     ports:
       - '9000:9000'
   frontend-static:
