@@ -1,40 +1,14 @@
-# TS News APP (ts-news-project)
+# Crypto News APP
 
-TS example project
+This is a just a sample of project with using the Vue 3 and TS
 
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
+## To be able to see posts:
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+- you shold Sign UP in the https://developers.coindesk.com/
 
+## To run project:
 
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+- install Docker
+- run `cp .env.example .env`
+- run `docker compose up` or `docker compose up -d`
+- open http://localhost:9000/

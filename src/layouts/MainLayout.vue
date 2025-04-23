@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import EssentialLink, { type EssentialLinkProps } from 'components/EssentialLink.vue';
-
+const router = useRouter();
 const linksList: EssentialLinkProps[] = [
   {
     title: 'News',
@@ -21,7 +22,7 @@ function toggleLeftDrawer() {
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-        <q-toolbar-title> Crypto News App </q-toolbar-title>
+        <q-toolbar-title @click="router.push('/')"> Crypto News App </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
