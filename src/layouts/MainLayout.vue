@@ -21,7 +21,7 @@ function toggleLeftDrawer() {
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-        <q-toolbar-title> TS News App </q-toolbar-title>
+        <q-toolbar-title> Crypto News App </q-toolbar-title>
       </q-toolbar>
     </q-header>
 

@@ -2,8 +2,8 @@
   "name": "ts-news-project",
   "version": "0.0.1",
   "description": "TS example project",
-  "productName": "TS News APP",
-  "author": "KaskoYurii <yuriy.kasko@quardex.com>",
+  "productName": "Crypto News APP",
+  "author": "KaskoYurii <hello.kasko@qmail.com>",
   "type": "module",
   "private": true,
   "scripts": {
