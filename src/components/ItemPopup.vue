@@ -19,11 +19,11 @@ const card = computed({
 </script>
 
 <template>
-  <q-dialog v-model="card">
-    <q-card class="item-popup-wrapper q-pa-lg">
+  <q-dialog v-model="card" full-height :backdrop-filter="'blur(4px)'">
+    <q-card class="item-popup-wrapper q-pa-lg" @click="card = false">
       <q-img :src="post.IMAGE_URL" />
       <q-card-section>
-        <h5 class="q-ma-sm">{{ post.TITLE }}</h5>
+        <div class="q-ma-sm text-bold text-uppercase">{{ post.TITLE }}</div>
         <q-separator />
         <p class="popup-text-body q-ma-sm">
           {{ post.BODY }}
@@ -34,14 +34,18 @@ const card = computed({
 </template>
 <style scoped lang="scss">
 .item-popup-wrapper {
+  overflow: hidden;
+  & > .q-card__section {
+    height: calc(100% - 320px);
+    & > .popup-text-body {
+      max-height: 100%;
+      overflow-y: auto;
+    }
+  }
   & > .q-img {
     height: 250px;
     width: 100%;
     object-fit: cover;
-  }
-  .popup-text-body {
-    max-height: 300px;
-    overflow-y: auto;
   }
 }
 </style>
