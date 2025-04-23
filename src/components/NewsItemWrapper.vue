@@ -24,4 +24,9 @@ defineProps({
   grid-auto-rows: 400px;
   gap: 16px;
 }
+@media (max-width: 765px) {
+  .news-items-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
 </style>
